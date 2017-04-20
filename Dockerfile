@@ -38,7 +38,6 @@ RUN set -xe \
     && pecl install redis apcu intl \
     && docker-php-ext-enable --ini-name 10-redis.ini redis \
     && apk del .build-deps \
-    && curl -SLO "https://getcomposer.org/installer" \
     && curl -fsSL "https://getcomposer.org/installer" -o /tmp/installer \
     && php /tmp/installer \
     && mv composer.phar /usr/local/bin/composer \
