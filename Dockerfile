@@ -44,7 +44,7 @@ RUN set -xe \
     && mv composer.phar /usr/local/bin/composer \
     && rm -rf /tmp/*
 
-COPY config/php/php.development.ini /usr/local/etc/php/php.ini
+COPY config/php/php.ini /usr/local/etc/php/php.ini
 COPY config/php-fpm.d/docker.conf /usr/local/etc/php-fpm.d/docker.conf
 COPY config/php-fpm.d/www.conf /usr/local/etc/php-fpm.d/www.conf
 COPY config/php-fpm.d/zz-docker.conf /usr/local/etc/php-fpm.d/zz-docker.conf
