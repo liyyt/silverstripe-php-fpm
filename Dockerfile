@@ -17,7 +17,8 @@ ENV PERSISTENT_DEPS \
     freetype-dev \
     libjpeg-turbo-dev \
     libltdl \
-    libpng-dev
+    libpng-dev \
+    git
 
 ENV PHP_EXT \
     gd \
@@ -41,7 +42,7 @@ RUN set -xe \
     && curl -fsSL "https://getcomposer.org/installer" -o /tmp/installer \
     && php /tmp/installer \
     && mv composer.phar /usr/local/bin/composer \
-    && rm /tmp/installer
+    && rm -rf /tmp/*
 
 COPY config/php/php.development.ini /usr/local/etc/php/php.ini
 COPY config/php-fpm.d/docker.conf /usr/local/etc/php-fpm.d/docker.conf
